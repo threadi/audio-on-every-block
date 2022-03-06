@@ -64,8 +64,6 @@ function audio_on_every_block_render_block( $block_content, $block ) {
         $settings['position'] = '';
     }
 
-    $output = $block['innerHTML'];
-
     if( !empty($block['attrs']) && !empty($block['attrs']['audioPlaybackId']) ) {
         // set title if available
         $title = !empty($block['attrs']['audioPlaybackTitle']) ? ' title="'.$block['attrs']['audioPlaybackTitle'].'"' : '';
@@ -89,15 +87,15 @@ function audio_on_every_block_render_block( $block_content, $block ) {
         switch( $settings['position'] ) {
             case 'below':
                 // set output
-                $output = $block['innerHTML'].$output;
+                $block_content = $block_content.$output;
                 break;
             case 'above':
             default:
                 // set output
-                $output = $output.$block['innerHTML'];
+                $block_content = $output.$block_content;
                 break;
         }
     }
-    return $output;
+    return $block_content;
 }
 add_filter( 'render_block', 'audio_on_every_block_render_block', 10, 2 );
