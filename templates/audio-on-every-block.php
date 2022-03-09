@@ -1,3 +1,3 @@
 <figure class="audio-on-every-block-output">
-    <audio src="<?php echo $args['file']; ?>" controls<?php echo $args['title']; ?>></audio>
+    <audio src="<?php echo esc_url($args['file']); ?>" controls title="<?php echo esc_html($args['title']); ?>"></audio>
 </figure>

@@ -66,7 +66,7 @@ function audio_on_every_block_render_block( $block_content, $block ) {
 
     if( !empty($block['attrs']) && !empty($block['attrs']['audioPlaybackId']) ) {
         // set title if available
-        $title = !empty($block['attrs']['audioPlaybackTitle']) ? ' title="'.$block['attrs']['audioPlaybackTitle'].'"' : '';
+        $title = !empty($block['attrs']['audioPlaybackTitle']) ? $block['attrs']['audioPlaybackTitle'] : '';
 
         // search for template with output
         $template = locate_template('audio-on-every-block.php', false, false);
