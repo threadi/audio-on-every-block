@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Functions for WP-Backend.
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 /**
  * Add options which configure the plugin.
  *
@@ -98,10 +108,16 @@ function audio_on_every_block_sanitize_from_db( $input ) {
     return $new_input;
 }
 
-function salcode_add_plugin_page_settings_link( $links ) {
+/**
+ * Add link to settingspage in pluginlist.
+ *
+ * @param $links
+ * @return mixed
+ */
+function audio_on_every_block_add_plugin_page_settings_link( $links ) {
     $links[] = '<a href="' .
         admin_url( 'options-general.php?page='. AOEB_ADMIN_SETTING_PAGE ) .
         '">' . __('Settings', 'audio-on-every-block') . '</a>';
     return $links;
 }
-add_filter('plugin_action_links_'.plugin_basename(AOEB_PLUGIN), 'salcode_add_plugin_page_settings_link');
+add_filter('plugin_action_links_'.plugin_basename(AOEB_PLUGIN), 'audio_on_every_block_add_plugin_page_settings_link');

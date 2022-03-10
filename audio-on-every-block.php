@@ -17,6 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * Define constants for this plugin.
+ */
 const AOEB_PLUGIN = __FILE__;
 const AOEB_OPTIONFIELD = 'audio-on-every-block';
 const AOEB_ADMIN_SETTING_PAGE = 'audio_on_every_block';
@@ -40,6 +43,8 @@ function audio_on_every_block_assets() {
         [  'wp-i18n', 'wp-block-editor' ],
         filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' )
     );
+
+    // Add translation for script.
     if ( function_exists( 'wp_set_script_translations' ) ) {
         wp_set_script_translations(
             'audio-on-every-block-backend-js',
@@ -60,16 +65,21 @@ add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_assets' );
 function audio_on_every_block_render_block( $block_content, $block ) {
     // get the setting for the position of the audio-file
     $settings = get_option( AOEB_OPTIONFIELD, true );
+
+    // -> set to empty string of no setting exists atm
     if( empty($settings['position']) ) {
         $settings['position'] = '';
     }
 
+    // add audio-playback if attribute is set on the Block
     if( !empty($block['attrs']) && !empty($block['attrs']['audioPlaybackId']) ) {
         // set title if available
         $title = !empty($block['attrs']['audioPlaybackTitle']) ? $block['attrs']['audioPlaybackTitle'] : '';
 
-        // search for template with output
+        // get template-file with output from theme or child-theme
         $template = locate_template('audio-on-every-block.php', false, false);
+
+        // -> if no template is found use the plugin-template
         if( empty($template) ) {
             $template = plugin_dir_path(AOEB_PLUGIN).'templates/audio-on-every-block.php';
         }
@@ -86,12 +96,12 @@ function audio_on_every_block_render_block( $block_content, $block ) {
         // position the audio-file depending on the setting
         switch( $settings['position'] ) {
             case 'below':
-                // set output
+                // set output below the content
                 $block_content = $block_content.$output;
                 break;
             case 'above':
             default:
-                // set output
+                // set output above the content
                 $block_content = $output.$block_content;
                 break;
         }
