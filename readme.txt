@@ -1,4 +1,4 @@
-=== Play Audio Once ===
+=== Audio on every block ===
 Contributors: threadi
 Tags: audio
 Requires at least: 5.8
