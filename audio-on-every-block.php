@@ -59,7 +59,7 @@ add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_assets' );
  */
 function audio_on_every_block_render_block( $block_content, $block ) {
     // get the setting for the position of the audio-file
-    $settings = get_option( AOEB_OPTIONFIELD, true );
+    $settings = get_option( AOEB_OPTIONFIELD, [] );
     if( empty($settings['position']) ) {
         $settings['position'] = '';
     }

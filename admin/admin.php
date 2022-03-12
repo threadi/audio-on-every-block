@@ -16,7 +16,7 @@ function audio_on_every_block_register_settings() {
     add_settings_section(
         'setting_section_id', // ID
         __('Settings', 'audio-on-every-block'), // Title
-        'print_section_info', // Callback
+        null, // Callback
         AOEB_ADMIN_SETTING_PAGE // Page
     );
 
