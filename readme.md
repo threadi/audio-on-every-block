@@ -54,5 +54,10 @@ Das Plugin ermöglicht nicht die automatische Erzeugung der dafür nötigen Audi
 
 ## Changelog
 
-### 1.0
+### 1.0.0
 * Initial commit
+
+### 1.0.1
+* fix possible error in settings-page
+* fix possible error in plugin-list
+* Updated compatibility-flag for Wordpress 6.0

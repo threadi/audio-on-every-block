@@ -1,12 +1,12 @@
 === Audio on every block ===
 Contributors: threadi
-Tags: audio
+Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 5.9.2
+Tested up to: 6.0
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 == Description ==
 
@@ -57,3 +57,8 @@ Das Plugin ermöglicht nicht die automatische Erzeugung der dafür nötigen Audi
 
 = 1.0.0 =
 * Initial commit
+
+= 1.0.1 =
+* fix possible error in settings-page
+* fix possible error in plugin-list
+* Updated compatibility-flag for Wordpress 6.0

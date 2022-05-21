@@ -4,7 +4,7 @@
  * Description:       Adds the possibility to add an audio-file for each Gutenberg-Block.
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Thomas Zwirner
  * Author URI:		  https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
@@ -32,6 +32,7 @@ if ( is_admin() ) {
  * Adds JavaScript-file for Gutenberg-editor to add the option.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function audio_on_every_block_assets() {
     wp_enqueue_script(
@@ -56,6 +57,7 @@ add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_assets' );
  * @param $block_content
  * @param $block
  * @return mixed|string
+ * @noinspection PhpUnused
  */
 function audio_on_every_block_render_block( $block_content, $block ) {
     // get the setting for the position of the audio-file
