@@ -3,6 +3,7 @@
  * Add options which configure the plugin.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function audio_on_every_block_register_settings() {
     load_plugin_textdomain('audio-on-every-block', false, dirname(plugin_basename(AOEB_PLUGIN)) . '/languages');
@@ -34,6 +35,7 @@ add_action('admin_init', 'audio_on_every_block_register_settings');
  * Add menu page for plugin-settings.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function audio_on_every_block_admin_menu()
 {
@@ -75,7 +77,10 @@ function audio_on_every_block_admin_menu_page()
  * @return void
  */
 function audio_on_every_block_admin_output_position() {
-    $settings = get_option(AOEB_OPTIONFIELD, true);
+    $settings = get_option(AOEB_OPTIONFIELD, []);
+    if( empty($settings['position']) ) {
+        $settings['position'] = '';
+    }
     ?>
         <select id="audio-position" name="audio-on-every-block[position]">
             <option value=""></option>
@@ -90,6 +95,8 @@ function audio_on_every_block_admin_output_position() {
  *
  * @param $input
  * @return array
+ * @noinspection PhpMissingReturnTypeInspection
+ * @noinspection PhpUnused
  */
 function audio_on_every_block_sanitize_from_db( $input ) {
     $new_input = array();
@@ -98,10 +105,17 @@ function audio_on_every_block_sanitize_from_db( $input ) {
     return $new_input;
 }
 
-function salcode_add_plugin_page_settings_link( $links ) {
+/**
+ * Add settings-link on plugin-list.
+ *
+ * @param $links
+ * @return mixed
+ * @noinspection PhpUnused
+ */
+function audio_on_every_block_add_settings_link( $links ) {
     $links[] = '<a href="' .
         admin_url( 'options-general.php?page='. AOEB_ADMIN_SETTING_PAGE ) .
         '">' . __('Settings', 'audio-on-every-block') . '</a>';
     return $links;
 }
-add_filter('plugin_action_links_'.plugin_basename(AOEB_PLUGIN), 'salcode_add_plugin_page_settings_link');
+add_filter('plugin_action_links_'.plugin_basename(AOEB_PLUGIN), 'audio_on_every_block_add_settings_link');
