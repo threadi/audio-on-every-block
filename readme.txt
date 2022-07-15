@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 6.0
+Tested up to: 6.0.1
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 == Description ==
 
@@ -14,42 +14,18 @@ Adds the possibility of adding an audio file to each Gutenberg block suitable fo
 
 The plug-in does not enable the automatic generation of the necessary audio files. The audio file must be created separately and uploaded to the block.
 
-=== Deutsch
-
-Ergänzt die Möglichkeit an jedem dafür geeigneten Gutenberg-Block eine Audio-Datei zu ergänzen. Dadurch kann z.B. der textliche Inhalt des Blocks vorgelesen werden.
-
-Das Plugin ermöglicht nicht die automatische Erzeugung der dafür nötigen Audio-Dateien. Die Audio-Datei muss separat erstellt und zum Block hochgeladen werden.
-
-## Features
+= Features =
 
 * selection of one audio file per block at all Gutenberg Core blocks that allow texts.
 * optional specification of a title to the audio file.
 * Global option to set position of the audio-file in relation to the block content.
 * optional use your own child-theme-template to change the output.
 
-### Deutsch
-
-* Auswahl einer Audio-Datei pro Block an allen Gutenberg-Core-Blöcken die Texte ermöglichen.
-* optionale Angabe eines Titels zur Audio-Datei
-* Globale Einstellung um die Position der Audio-Datei in Relation zum Block-Inhalt zu setzen.
-* optional kann man ein eigenes Template über ein Child-Theme verwenden um die Ausgabe anzupassen.
-
----
-
-== Installation
-
-=== English
+== Installation ==
 
 1. Upload "audio-on-every-block" to the "/wp-content/plugins/" directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
 3. Add your audio-files on each Block in Gutenberg.
-
-=== Deutsch
-
-1. Lade "audio-on-every-block" in das Verzeichnis "/wp-content/plugins/\" hoch.
-2. Aktivieren Sie das Plugin über das Menü "Plugins" in WordPress.
-3. Ergänzen Sie die Audio-Dateien an jedem Block im Gutenberg-Editor.
-
 
 == Screenshots ==
 
@@ -61,4 +37,8 @@ Das Plugin ermöglicht nicht die automatische Erzeugung der dafür nötigen Audi
 = 1.0.1 =
 * fix possible error in settings-page
 * fix possible error in plugin-list
-* Updated compatibility-flag for Wordpress 6.0
+* Updated compatibility-flag for WordPress 6.0
+
+= 1.0.2 =
+* Updated readme
+* Updated compatibility-flag for WordPress 6.0.1
