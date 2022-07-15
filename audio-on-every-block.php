@@ -4,7 +4,7 @@
  * Description:       Adds the possibility to add an audio-file for each Gutenberg-Block.
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Version:           1.0.1
+ * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
  * Author URI:		  https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later

@@ -84,8 +84,8 @@ function audio_on_every_block_admin_output_position() {
     ?>
         <select id="audio-position" name="audio-on-every-block[position]">
             <option value=""></option>
-            <option value="above"<?php if( $settings['position'] == 'above' ) { ?> selected<?php } ?>><?php echo __('above', 'audio-on-every-block'); ?></option>
-            <option value="below"<?php if( $settings['position'] == 'below' ) { ?> selected<?php } ?>><?php echo __('below', 'audio-on-every-block'); ?></option>
+            <option value="above"<?php if( $settings['position'] == 'above' ) { ?> selected="selected"<?php } ?>><?php echo __('above', 'audio-on-every-block'); ?></option>
+            <option value="below"<?php if( $settings['position'] == 'below' ) { ?> selected="selected"<?php } ?>><?php echo __('below', 'audio-on-every-block'); ?></option>
         </select>
     <?php
 }

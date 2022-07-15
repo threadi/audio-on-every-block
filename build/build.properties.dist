@@ -1,0 +1,8 @@
+# Plugin-Slug
+plugin.slug=audio-on-every-block
+
+# version number to use
+plugin.version=
+
+# set path to npm-binary
+npm.path=

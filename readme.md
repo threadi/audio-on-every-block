@@ -1,63 +1,64 @@
 # Audio on every block
-Contributors: threadi
-Tags: audio
-Requires at least: 5.8
-Tested up to: 5.9.2
-Requires PHP: 7.4
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0
 
-## Description
+This repository is the base for the plugin _Audio on every block_. This provides an addition for many Gutenberg-Blocks to add an audio file per Block.
 
-Adds the possibility of adding an audio file to each Gutenberg block suitable for this purpose. This allows, for example, the textual content of the block to be read aloud.
+## Usage
 
-The plugin does not enable the automatic generation of the necessary audio files. The audio file must be created separately and uploaded to the block.
+After checkout go through the following steps:
 
-### Deutsch
+1. copy _build/build.properties.dist_ to _build/build.properties_.
+2. modify the build/build.properties file - note the comments in the file.
+3. execute the command in _build/_: `ant init`
+4. after that the plugin can be activated in WordPress
 
-Ergänzt die Möglichkeit an jedem dafür geeigneten Gutenberg-Block eine Audio-Datei zu ergänzen. Dadurch kann z.B. der textliche Inhalt des Blocks vorgelesen werden.
+## Release
 
-Das Plugin ermöglicht nicht die automatische Erzeugung der dafür nötigen Audio-Dateien. Die Audio-Datei muss separat erstellt und zum Block hochgeladen werden.
+1. increase the version number in _build/build.properties_.
+2. execute the following command in _build/_: `ant build`
+3. after that you will finde in the release directory a zip file which could be used in WordPress to install it.
 
-## Features
+## Translations
 
-* selection of one audio file per block at all Gutenberg Core blocks that allow texts.
-* optional specification of a title to the audio file.
-* Global option to set position of the audio-file in relation to the block content.
-* optional use your own child-theme-template to change the output.
+I recommend to use [PoEdit](https://poedit.net/) to translate texts for this plugin.
 
-### Deutsch
+### generate pot-file
 
-* Auswahl einer Audio-Datei pro Block an allen Gutenberg-Core-Blöcken die Texte ermöglichen.
-* optionale Angabe eines Titels zur Audio-Datei
-* Globale Einstellung um die Position der Audio-Datei in Relation zum Block-Inhalt zu setzen.
-* optional kann man ein eigenes Template über ein Child-Theme verwenden um die Ausgabe anzupassen.
+Run in main directory:
 
----
+`wp i18n make-pot . languages/audio-on-every-block.pot --exclude=src`
 
-## Installation
+### update translation-file
 
-### English
+1. Open .po-file of the language in PoEdit.
+2. Go to "Translate > "Update from POT-file".
+3. After this the new entries are added to the language-file.
 
-1. Upload "audio-on-every-block" to the "/wp-content/plugins/" directory.
-2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Add your audio-files on each Block in Gutenberg.
+### export translation-file
 
-### Deutsch
+1. Open .po-file of the language in PoEdit.
+2. Go to File > Save.
+3. Upload the generated .mo-file and the .po-file to the plugin-folder languages/
 
-1. Lade "audio-on-every-block" in das Verzeichnis "/wp-content/plugins/\" hoch.
-2. Aktivieren Sie das Plugin über das Menü "Plugins" in WordPress.
-3. Ergänzen Sie die Audio-Dateien an jedem Block im Gutenberg-Editor.
+### generate json-translation-files
 
-## Screenshots
+Run in main directory:
 
-## Changelog
+`wp i18n make-json languages`
 
-### 1.0.0
-* Initial commit
+OR use ant in build/-directory: `ant json-translations`
 
-### 1.0.1
-* fix possible error in settings-page
-* fix possible error in plugin-list
-* Updated compatibility-flag for Wordpress 6.0
+## Build blocks
+
+### Requirements
+
+`npm install`
+
+### Run for development
+
+`npm start`
+
+### Run for release
+
+`npm run build`
+
+Hint: will be called by ant-command mentioned above.
