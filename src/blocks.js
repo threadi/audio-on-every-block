@@ -13,6 +13,8 @@ const supportedBlocks = [
     'core/paragraph',
     'core/gallery',
     'core/list',
+    'core/media-text',
+    'core/navigation',
     'core/quote',
     'core/pullquote',
     'core/table'
