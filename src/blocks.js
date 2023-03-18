@@ -39,7 +39,8 @@ function addAudioPlaybackAttribute(settings, name) {
                 default: 0
             },
             audioPlaybackTitle: {
-                type: 'string'
+                type: 'string',
+                default: ''
             },
         });
     }
