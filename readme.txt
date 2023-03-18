@@ -49,4 +49,5 @@ The plug-in does not enable the automatic generation of the necessary audio file
 
 = 1.1.1 =
 * Fixed usage of audio-title
+* Updates external dependencies
 * Updated compatibility-flag for WordPress 6.2
