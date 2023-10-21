@@ -10,9 +10,9 @@ Stable tag: 1.1.3
 
 == Description ==
 
-Adds the possibility of adding an audio file to each Gutenberg block suitable for this purpose. This allows, for example, the textual content of the block to be read aloud.
+Adds the possibility to add an audio file to each Gutenberg block suitable for this purpose. This allows, for example, the textual content of the block to be read aloud.
 
-The plug-in does not enable the automatic generation of the necessary audio files. The audio file must be created separately and uploaded to the block.
+The plugin does not enable the automatic generation of the necessary audio files. The audio file must be created separately and uploaded to the block.
 
 = Features =
 
@@ -60,3 +60,4 @@ The plug-in does not enable the automatic generation of the necessary audio file
 * Updated compatibility-flag for WordPress 6.4
 * Updates external dependencies
 * Compatible with WordPress Coding Standards 3.0
+* Removed language-files from plugin (except the json-files for Block Editor)

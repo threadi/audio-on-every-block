@@ -25,12 +25,12 @@ I recommend to use [PoEdit](https://poedit.net/) to translate texts for this plu
 
 Run in main directory:
 
-`wp i18n make-pot . languages/audio-on-every-block.pot --exclude=src`
+`wp i18n make-pot . languages/audio-on-every-block.pot --exclude=src,svn`
 
 ### update translation-file
 
 1. Open .po-file of the language in PoEdit.
-2. Go to "Translate > "Update from POT-file".
+2. Go to "Translate" > "Update from POT-file".
 3. After this the new entries are added to the language-file.
 
 ### export translation-file
@@ -43,7 +43,7 @@ Run in main directory:
 
 Run in main directory:
 
-`wp i18n make-json languages`
+`wp i18n make-json languages --no-purge`
 
 OR use ant in build/-directory: `ant json-translations`
 
