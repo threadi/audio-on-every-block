@@ -2,3 +2,4 @@ releases/
 build/build.properties
 *.zip
 languages/*.json
+vendor/
