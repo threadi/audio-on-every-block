@@ -9,11 +9,8 @@
  * Add options which configure the plugin.
  *
  * @return void
- * @noinspection PhpUnused
  */
 function audio_on_every_block_register_settings(): void {
-	load_plugin_textdomain( 'audio-on-every-block', false, dirname( plugin_basename( AOEB_PLUGIN ) ) . '/languages' );
-
 	register_setting(
 		'audio-on-every-block-group',
 		AOEB_OPTIONFIELD,
@@ -41,7 +38,6 @@ add_action( 'admin_init', 'audio_on_every_block_register_settings' );
  * Add menu page for plugin-settings.
  *
  * @return void
- * @noinspection PhpUnused
  */
 function audio_on_every_block_admin_menu(): void {
 	add_options_page(
