@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 6.5
+Tested up to: 6.5.3
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 == Description ==
 
@@ -65,3 +65,7 @@ The plugin does not enable the automatic generation of the necessary audio files
 = 1.1.4 =
 * Updated compatibility-flag for WordPress 6.5
 * Remove also the JSON-language-files
+
+= 1.1.5 =
+* Updated compatibility-flag for WordPress 6.5.3
+* Updates external dependencies
