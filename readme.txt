@@ -8,6 +8,8 @@ License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: 1.1.5
 
+Adds the possibility to add an audio file to each Gutenberg block suitable for this purpose.
+
 == Description ==
 
 Adds the possibility to add an audio file to each Gutenberg block suitable for this purpose. This allows, for example, the textual content of the block to be read aloud.
