@@ -2,11 +2,13 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 6.5.3
+Tested up to: 6.6
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: 1.1.5
+
+Adds the possibility to add an audio file to each Gutenberg block suitable for this purpose.
 
 == Description ==
 
