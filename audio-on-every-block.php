@@ -32,7 +32,7 @@ const AOEB_ADMIN_SETTING_PAGE = 'audio_on_every_block';
  * Load the following only in WP-admin.
  */
 if ( is_admin() ) {
-	require_once 'admin/admin.php';
+	require_once __DIR__ . '/admin/admin.php';
 }
 
 /**
