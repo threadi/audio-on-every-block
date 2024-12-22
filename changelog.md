@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Update external dependencies
+
 ## [1.1.6] - 22.12.2024
 
 ### Added
