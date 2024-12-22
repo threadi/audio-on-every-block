@@ -30,7 +30,7 @@ jobs:
                   search-text: '@@VersionNumber@@'
                   replacement-text: ${{ github.ref_name }}
 
-            - name: Set version number 3
+            - name: Set version number 2
               uses: richardrigutins/replace-in-files@v2
               with:
                   files: 'readme.txt'
