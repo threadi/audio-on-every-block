@@ -1,5 +1,6 @@
 {
     "name": "threadi/audio-on-every-block",
+    "version": "1.1.6",
     "require-dev": {
         "wp-coding-standards/wpcs": "^3.0.0"
     },

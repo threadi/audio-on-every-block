@@ -6,7 +6,7 @@ Tested up to: 6.6
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.5
+Stable tag: @@VersionNumber@@
 
 Adds the possibility to add an audio file to each Gutenberg block suitable for this purpose.
 
@@ -33,41 +33,8 @@ The plugin does not enable the automatic generation of the necessary audio files
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial commit
+= 1.1.6 =
+* Added GitHub action to build releases
+* Move this changelog to GitHub
 
-= 1.0.1 =
-* fix possible error in settings-page
-* fix possible error in plugin-list
-* Updated compatibility-flag for WordPress 6.0
-
-= 1.0.2 =
-* Updated readme
-* Updated compatibility-flag for WordPress 6.0.1
-
-= 1.1.0 =
-* Added support for navigation-block and media-text
-* Updated compatibility-flag for WordPress 6.1
-
-= 1.1.1 =
-* Fixed usage of audio-title
-* Updates external dependencies
-* Updated compatibility-flag for WordPress 6.2
-
-= 1.1.2 =
-* Updated compatibility-flag for WordPress 6.3
-* Compatible with WordPress Coding Standards
-
-= 1.1.3 =
-* Updated compatibility-flag for WordPress 6.4
-* Updates external dependencies
-* Compatible with WordPress Coding Standards 3.0
-* Removed language-files from plugin (except the json-files for Block Editor)
-
-= 1.1.4 =
-* Updated compatibility-flag for WordPress 6.5
-* Remove also the JSON-language-files
-
-= 1.1.5 =
-* Updated compatibility-flag for WordPress 6.5.3
-* Updates external dependencies
+[older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)
