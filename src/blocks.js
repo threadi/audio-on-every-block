@@ -105,6 +105,7 @@ const coverAdvancedControls = wp.compose.createHigherOrderComponent((BlockEdit) 
                                                 onClick={open}
                                             >
                                                 {attributes.audioPlaybackId === 0 && __('Choose an audio-file', 'audio-on-every-block')}
+                                                {attributes.audioPlaybackId !== 0 && __('File chosen', 'audio-on-every-block')}
                                             </Button>
                                         )}
                                     />
