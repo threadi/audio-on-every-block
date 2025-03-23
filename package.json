@@ -1,6 +1,6 @@
 {
 	"name": "audio-on-every-block",
-	"version": "1.1.5",
+	"version": "1.2.0",
 	"description": "Adds the possibility to add an audio-file for each Gutenberg-Block.",
 	"author": "threadi",
 	"license": "GPL-2.0-or-later",

@@ -2,8 +2,8 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 6.7
-Requires PHP: 7.4
+Tested up to: 6.8
+Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: @@VersionNumber@@
@@ -33,8 +33,11 @@ The plugin does not enable the automatic generation of the necessary audio files
 
 == Changelog ==
 
-= 1.1.6 =
-* Added GitHub action to build releases
-* Move this changelog to GitHub
+= @@VersionNumber@@ =
+- Added custom styles for editor to optimized form fields to choose audio files for blocks
+- Set button title if audio file has been chosen
+- Update external dependencies
+- Updated compatibility-flag for WordPress 6.8
+- Plugin now requires PHP 8.0 or newer
 
 [older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)

@@ -3,7 +3,7 @@
  * Plugin Name:       Audio on every Block
  * Description:       Adds the possibility to add an audio-file for each Gutenberg-Block.
  * Requires at least: 5.8
- * Requires PHP:      7.4
+ * Requires PHP:      8.0
  * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de
@@ -113,3 +113,18 @@ function audio_on_every_block_render_block( string $block_content, array $block 
 	return $block_content;
 }
 add_filter( 'render_block', 'audio_on_every_block_render_block', 10, 2 );
+
+/**
+ * Add custom styles for editor.
+ *
+ * @return void
+ */
+function audio_on_every_block_add_editor_styles(): void {
+	wp_enqueue_style(
+		'audio-on-every-block',
+		plugins_url( 'admin/editor.css', AOEB_PLUGIN ),
+		array(),
+		filemtime( plugin_dir_path( __FILE__ ) . 'admin/editor.css' ),
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_add_editor_styles' );

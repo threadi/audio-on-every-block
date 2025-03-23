@@ -1,10 +1,17 @@
 # Changelog
 
-## [Unreleased]
+## [1.2.0] - 23.03.2025
+
+### Added
+
+- Added custom styles for editor to optimized form fields to choose audio files for blocks
 
 ### Changed
 
+- Set button title if audio file has been chosen
 - Update external dependencies
+- Updated compatibility-flag for WordPress 6.8
+- Plugin now requires PHP 8.0 or newer
 
 ## [1.1.6] - 22.12.2024
 
