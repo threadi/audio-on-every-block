@@ -14,7 +14,7 @@ function audio_on_every_block_register_settings(): void {
 	register_setting(
 		'audio-on-every-block-group',
 		AOEB_OPTIONFIELD,
-		'audio_on_every_block_sanitize_from_db'
+		array( 'sanitize_callback' => 'audio_on_every_block_sanitize_from_db' )
 	);
 
 	add_settings_section(
@@ -100,8 +100,8 @@ function audio_on_every_block_admin_output_position(): void {
 /**
  * Secure the input for each setting on save.
  *
- * @param array $input List of inputs to secure.
- * @return array
+ * @param array<string,mixed> $input List of inputs to secure.
+ * @return array<string,mixed>
  * @noinspection PhpUnused
  */
 function audio_on_every_block_sanitize_from_db( array $input ): array {
@@ -115,8 +115,8 @@ function audio_on_every_block_sanitize_from_db( array $input ): array {
 /**
  * Add settings-link on plugin-list.
  *
- * @param array $links List of options on the plugin.
- * @return array
+ * @param array<int,string> $links List of options on the plugin.
+ * @return array<int,string>
  * @noinspection PhpUnused
  */
 function audio_on_every_block_add_settings_link( array $links ): array {

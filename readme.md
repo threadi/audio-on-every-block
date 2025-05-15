@@ -71,8 +71,8 @@ Hint: will be called by ant-command mentioned above.
 
 ### Run
 
-`vendor/bin/phpcs --extensions=php --ignore=*/attributes/*,*/vendor/*,*/node_modules/*,*/svn/* --standard=WordPress .`
+`vendor/bin/phpcs --standard=ruleset.xml .`
 
 ### Repair
 
-`vendor/bin/phpcbf --extensions=php --ignore=*/attributes/*,*/vendor/*,*/node_modules/*,*/svn/* --standard=WordPress file`
+`vendor/bin/phpcbf --standard=ruleset.xml file`

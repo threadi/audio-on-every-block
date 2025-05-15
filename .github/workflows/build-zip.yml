@@ -23,6 +23,15 @@ jobs:
                   npm i
                   npm run build
 
+            - name: Run PHPStan check
+              run: vendor/bin/phpstan analyse
+
+            - name: Run WordPress Coding Standard fixes
+              run: vendor/bin/phpcbf --standard=ruleset.xml .
+
+            - name: Run WordPress Coding Standard checks
+              run: vendor/bin/phpcs --standard=ruleset.xml .
+
             - name: Set version number 1
               uses: richardrigutins/replace-in-files@v2
               with:
