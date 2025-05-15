@@ -14,9 +14,12 @@
  * @package audio-on-every-block
  */
 
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+// prevent direct access.
+defined( 'ABSPATH' ) || exit;
+
+// do nothing if PHP-version is not 8.0 or newer.
+if ( PHP_VERSION_ID < 80000 ) { // @phpstan-ignore smaller.alwaysFalse
+	return;
 }
 
 // save the plugin-path.
@@ -46,7 +49,7 @@ function audio_on_every_block_assets(): void {
 		'audio-on-every-block-backend-js',
 		plugins_url( 'attributes/index.js', AOEB_PLUGIN ),
 		array( 'wp-i18n', 'wp-block-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' ),
+		(string) filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' ),
 		true
 	);
 	if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -62,8 +65,8 @@ add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_assets' );
 /**
  * Change the output for each block with audioPlayback-setting on rendering.
  *
- * @param string $block_content The content of the block.
- * @param array  $block The block settings as array.
+ * @param string              $block_content The content of the block.
+ * @param array<string,mixed> $block The block settings as array.
  * @return string
  * @noinspection PhpUnused
  */
@@ -94,14 +97,17 @@ function audio_on_every_block_render_block( string $block_content, array $block 
 				'title' => $title,
 			)
 		);
-		$output = ob_get_contents();
-		ob_end_clean();
+		$output = ob_get_clean();
+
+		if ( ! $output ) {
+			return $block_content;
+		}
 
 		// position the audio-file depending on the setting.
 		switch ( $settings['position'] ) {
 			case 'below':
 				// set output.
-				$block_content = $block_content . $output;
+				$block_content .= $output;
 				break;
 			case 'above':
 			default:
@@ -124,7 +130,7 @@ function audio_on_every_block_add_editor_styles(): void {
 		'audio-on-every-block',
 		plugins_url( 'admin/editor.css', AOEB_PLUGIN ),
 		array(),
-		filemtime( plugin_dir_path( __FILE__ ) . 'admin/editor.css' ),
+		(string) filemtime( plugin_dir_path( __FILE__ ) . 'admin/editor.css' ),
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'audio_on_every_block_add_editor_styles' );

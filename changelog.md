@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0] - 15.05.2025
+
+### Added
+
+- Added check with PHPStan to reduce potential PHP-errors
+
+### Changed
+
+- Do not run with PHP 7.4 or older
+
 ## [1.2.0] - 23.03.2025
 
 ### Added
