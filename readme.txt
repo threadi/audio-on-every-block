@@ -34,10 +34,7 @@ The plugin does not enable the automatic generation of the necessary audio files
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Added custom styles for editor to optimized form fields to choose audio files for blocks
-- Set button title if audio file has been chosen
-- Update external dependencies
-- Updated compatibility-flag for WordPress 6.8
-- Plugin now requires PHP 8.0 or newer
+- Added check with PHPStan to reduce potential PHP-errors
+- Do not run with PHP 7.4 or older
 
 [older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)
