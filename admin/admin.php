@@ -6,7 +6,7 @@
  */
 
 /**
- * Add options which configure the plugin.
+ * Add options, which configure the plugin.
  *
  * @return void
  */
@@ -51,7 +51,7 @@ function audio_on_every_block_admin_menu(): void {
 add_action( 'admin_menu', 'audio_on_every_block_admin_menu' );
 
 /**
- * Output the settings-page in admin.
+ * Output the settings-page in the backend.
  *
  * @return void
  */

@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1] - 28.03.2026
+
+### Changed
+
+- Changed handling of TextControl for better compatibility with future WordPress versions
+- Set compatibility with WordPress 7.0
+- Optimized some texts
+
 ## [1.3.0] - 15.05.2025
 
 ### Added

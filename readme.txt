@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -34,7 +34,8 @@ The plugin does not enable the automatic generation of the necessary audio files
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Added check with PHPStan to reduce potential PHP-errors
-- Do not run with PHP 7.4 or older
+- Changed handling of TextControl for better compatibility with future WordPress versions
+- Set compatibility with WordPress 7.0
+- Optimized some texts
 
 [older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)

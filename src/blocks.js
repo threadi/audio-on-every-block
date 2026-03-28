@@ -119,6 +119,7 @@ const coverAdvancedControls = wp.compose.createHigherOrderComponent((BlockEdit) 
                                     label={__('Title', 'audio-on-every-block')}
                                     value={ attributes.audioPlaybackTitle }
                                     onChange={ ( value ) => setAttributes( { audioPlaybackTitle: value } ) }
+                                    __next40pxDefaultSize
                                 />
                             </div>
                         </PanelBody>
