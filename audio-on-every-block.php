@@ -81,7 +81,7 @@ function audio_on_every_block_render_block( string $block_content, array $block 
 		// set title if available.
 		$title = ! empty( $block['attrs']['audioPlaybackTitle'] ) ? $block['attrs']['audioPlaybackTitle'] : '';
 
-		// search for template with output.
+		// search for a template with output.
 		$template = locate_template( 'audio-on-every-block.php', false, false );
 		if ( empty( $template ) ) {
 			$template = plugin_dir_path( AOEB_PLUGIN ) . 'templates/audio-on-every-block.php';
@@ -121,7 +121,7 @@ function audio_on_every_block_render_block( string $block_content, array $block 
 add_filter( 'render_block', 'audio_on_every_block_render_block', 10, 2 );
 
 /**
- * Add custom styles for editor.
+ * Add custom styles for the editor.
  *
  * @return void
  */
