@@ -106,7 +106,7 @@ function audio_on_every_block_admin_output_position(): void {
  */
 function audio_on_every_block_sanitize_from_db( array $input ): array {
 	$new_input = array();
-	if ( isset( $input['position'] ) ) {
+	if ( isset( $input['position'] ) && in_array( $input['position'], array( 'above', 'below' ), true ) ) {
 		$new_input['position'] = sanitize_text_field( $input['position'] );
 	}
 	return $new_input;

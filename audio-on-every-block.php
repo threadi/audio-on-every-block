@@ -45,10 +45,13 @@ if ( is_admin() ) {
  * @noinspection PhpUnused
  */
 function audio_on_every_block_assets(): void {
+	// get the assets.
+	$assets = include plugin_dir_path( __FILE__ ) . 'attributes/index.asset.php';
+
 	wp_enqueue_script(
 		'audio-on-every-block-backend-js',
 		plugins_url( 'attributes/index.js', AOEB_PLUGIN ),
-		array( 'wp-i18n', 'wp-block-editor' ),
+		$assets['dependencies'],
 		(string) filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' ),
 		true
 	);
@@ -78,6 +81,14 @@ function audio_on_every_block_render_block( string $block_content, array $block 
 	}
 
 	if ( ! empty( $block['attrs'] ) && ! empty( $block['attrs']['audioPlaybackId'] ) ) {
+		// get the file type.
+		$mime_type = get_post_mime_type( $block['attrs']['audioPlaybackId'] );
+
+		// bail if given mime type is empty or not an audio mime type.
+		if ( empty( $mime_type ) || ! str_starts_with( $mime_type, 'audio/' ) ) {
+			return $block_content;
+		}
+
 		// set title if available.
 		$title = ! empty( $block['attrs']['audioPlaybackTitle'] ) ? $block['attrs']['audioPlaybackTitle'] : '';
 
