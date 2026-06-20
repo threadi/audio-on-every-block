@@ -34,8 +34,7 @@ The plugin does not enable the automatic generation of the necessary audio files
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Changed handling of TextControl for better compatibility with future WordPress versions
-- Set compatibility with WordPress 7.0
-- Optimized some texts
+- Check the mime type for the selected file before output in frontend
+- Optimized loading of the block attributes
 
 [older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)

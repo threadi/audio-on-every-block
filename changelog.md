@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2] - 20.06.2026
+
+### Changed
+
+- Check the mime type for the selected file before output in frontend
+- Optimized loading of the block attributes
+
 ## [1.3.1] - 28.03.2026
 
 ### Changed
@@ -22,7 +29,7 @@
 
 ### Added
 
-- Added custom styles for editor to optimized form fields to choose audio files for blocks
+- Added custom styles for the editor to optimized form fields to choose audio files for blocks
 
 ### Changed
 
