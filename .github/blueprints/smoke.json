@@ -1,0 +1,15 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": { "php": "8.4", "wp": "latest" },
+  "login": true,
+  "steps": [
+    {
+      "step": "activatePlugin",
+      "pluginPath": "audio-on-every-block/audio-on-every-block.php"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; if ( ! defined( 'AOEB_PLUGIN' ) ) { throw new Exception( 'plugin constants missing' ); } file_put_contents( '/wordpress/wp-content/plugins/audio-on-every-block/smoke-result.txt', 'SMOKE_OK' );"
+    }
+  ]
+}
