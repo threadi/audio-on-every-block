@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: audio, audio block
 Requires at least: 5.8
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,9 +18,9 @@ The plugin does not enable the automatic generation of the necessary audio files
 
 = Features =
 
-* selection of one audio file per block at all Gutenberg Core blocks that allow texts.
+* selection of one audio file per Block at all Gutenberg Core blocks that allow texts.
 * optional specification of a title to the audio file.
-* Global option to set position of the audio-file in relation to the block content.
+* Global option to set position of the audio-file to the block content.
 * optional use your own child-theme-template to change the output.
 
 == Installation ==
@@ -34,7 +34,7 @@ The plugin does not enable the automatic generation of the necessary audio files
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Check the mime type for the selected file before output in frontend
-- Optimized loading of the block attributes
+- Set compatibility with WordPress 7.1
+- Updated dependencies
 
 [older changes](https://github.com/threadi/audio-on-every-block/blob/master/changelog.md)

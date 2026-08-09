@@ -71,8 +71,8 @@ Hint: will be called by ant-command mentioned above.
 
 ### Run
 
-`vendor/bin/phpcs --standard=ruleset.xml .`
+`vendor/bin/phpcs .`
 
 ### Repair
 
-`vendor/bin/phpcbf --standard=ruleset.xml file`
+`vendor/bin/phpcbf .`

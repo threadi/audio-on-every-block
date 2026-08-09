@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
 
             - name: Setup WP-CLI
               uses: godaddy-wordpress/setup-wp-cli@1
@@ -19,7 +19,6 @@ jobs:
             - name: Run package installs and builds
               run: |
                   composer install
-                  composer update
                   npm i
                   npm run build
 
@@ -27,20 +26,20 @@ jobs:
               run: vendor/bin/phpstan analyse
 
             - name: Run WordPress Coding Standard fixes
-              run: vendor/bin/phpcbf --standard=ruleset.xml .
+              run: vendor/bin/phpcbf .
 
             - name: Run WordPress Coding Standard checks
-              run: vendor/bin/phpcs --standard=ruleset.xml .
+              run: vendor/bin/phpcs .
 
             - name: Set version number 1
-              uses: richardrigutins/replace-in-files@v2
+              uses: richardrigutins/replace-in-files@v3
               with:
                   files: 'audio-on-every-block.php'
                   search-text: '@@VersionNumber@@'
                   replacement-text: ${{ github.ref_name }}
 
             - name: Set version number 2
-              uses: richardrigutins/replace-in-files@v2
+              uses: richardrigutins/replace-in-files@v3
               with:
                   files: 'readme.txt'
                   search-text: '@@VersionNumber@@'
@@ -57,11 +56,11 @@ jobs:
                   rm changelog.md
                   rm readme.md
                   cd ..
-                  zip -r -q ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/blocks/*/src/*" "*/doc/*" "*/phpcs.xml" "*/composer.json" "*/composer.lock" "*/package.json" "*/package-lock.json" "*/.gitignore" "*/vendor/*" "*/node_modules/*" "/.editorconfig"
+                  zip -r -q ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/blocks/*/src/*" "*/doc/*" "*/.phpcs.xml.dist" "*/composer.json" "*/composer.lock" "*/package.json" "*/package-lock.json" "*/.gitignore" "*/vendor/*" "*/node_modules/*" "/.editorconfig"
                   cp ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/
 
             - name: Create Release
-              uses: softprops/action-gh-release@v2
+              uses: softprops/action-gh-release@v3
               if: startsWith(github.ref, 'refs/tags/')
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
