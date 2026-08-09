@@ -76,3 +76,18 @@ Hint: will be called by ant-command mentioned above.
 ### Repair
 
 `vendor/bin/phpcbf .`
+
+## Playwright
+
+See: https://wordpress.github.io/wordpress-playground/guides/e2e-testing-with-playwright/
+
+### Prepare
+
+```
+npm install
+npx playwright install chromium
+```
+
+### Run
+
+`npx playwright test`
