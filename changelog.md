@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3] - 09.08.2026
+
+### Changed
+
+- Set compatibility with WordPress 7.1
+- Updated dependencies
+
 ## [1.3.2] - 20.06.2026
 
 ### Changed
